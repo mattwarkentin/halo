@@ -1,4 +1,4 @@
-#' HaloDotAPI Token Management
+#' Halo Infinite API Token Management
 #'
 #' Get or set your HaloDotAPI access token as an environment variable.
 #'

@@ -3,7 +3,7 @@
 \name{get_HaloDotAPI_token}
 \alias{get_HaloDotAPI_token}
 \alias{set_HaloDotAPI_token}
-\title{HaloDotAPI Token Management}
+\title{Halo Infinite API Token Management}
 \usage{
 get_HaloDotAPI_token()
 

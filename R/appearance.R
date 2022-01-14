@@ -1,4 +1,4 @@
-#' Players Appearance on Halo Infinite
+#' Halo Infinite Player Appearance
 #'
 #' Returns targeted player's appearance on Halo Infinite.
 #'

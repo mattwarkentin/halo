@@ -1,4 +1,3 @@
-#' @export
 get_n_matches <- function(
     gamertag,
     count,

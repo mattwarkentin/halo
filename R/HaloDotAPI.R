@@ -1,8 +1,9 @@
-#' Perform a Request to HaloDotAPI
+#' Perform a Request to the Halo Infinite API
 #'
-#' This function is the main tool for making requests to HaloDotAPI. Most
-#'   users will not use this function directly, but will instead use
-#'   functions that are specific to the available endpoints.
+#' This function is the main tool for making requests to the Halo Infinite
+#'   API. Most users will not need to use this function directly, but will
+#'   instead use the wrapper functions that are specific to the available
+#'   endpoints.
 #'
 #' @param endpoint Endpoint.
 #' @param ... Query parameters passed on to the chosen `endpoint`.
@@ -33,7 +34,7 @@ HaloDotAPI <- function(
     httr2::req_perform() %>%
     httr2::resp_body_json(simplifyVector = TRUE)
 
-  ep_class <- stringr::str_replace_all(endpoint, '[[:punct:]]', '_')
+  ep_class <- gsub('[[:punct:]]', '_', endpoint)
 
   structure(
     .Data = resp,

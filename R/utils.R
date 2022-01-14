@@ -17,6 +17,16 @@ verify_endpoint <- function(endpoint) {
   endpoint
 }
 
+#' Halo Infinite API Versions
+#'
+#' Character vector of available versions for the Halo Infinite API.
+#'
+#' @format A character vector.
+#'
+#' @examples
+#' HaloDotAPI_versions
+#'
+#' @export
 HaloDotAPI_versions <- c(
   '0.3.6',
   '0.3.5',

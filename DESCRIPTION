@@ -16,6 +16,5 @@ Imports:
     magrittr,
     purrr,
     rlang,
-    stringr,
     tibble,
     tidyr

@@ -2,7 +2,7 @@
 % Please edit documentation in R/appearance.R
 \name{halo_appearance}
 \alias{halo_appearance}
-\title{Players Appearance on Halo Infinite}
+\title{Halo Infinite Player Appearance}
 \usage{
 halo_appearance(gamertag, version = "0.3.6", token = get_HaloDotAPI_token())
 }

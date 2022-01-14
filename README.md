@@ -25,9 +25,10 @@ remotes::install_github("mattwarkentin/halo")
 
 ## HaloDotAPI Token
 
-HaloDotAPI is a free service, however, you are required to authenticate
-yourself when making requests to the API. Thankfully, the `halo` package
-makes it easy to manage and utilize your token for API requests.
+The Halo Infinite API is a free service, however, you are required to
+authenticate yourself when making requests to the API. Thankfully, the
+`halo` package makes it easy to manage and utilize your token for API
+requests.
 
 Firstly, you need to acquire an API token that will be used for every
 request. This can be done by creating an Autocode account here:
@@ -50,19 +51,19 @@ several ways.
 
 2.  Set the environment variable `HALODOTAPI_TOKEN`, and any API request
     will automatically bundle this token in the request for
-    authentication. This package provides a function for declaring the
+    authentication. This package provides a function for setting the
     environment variable via `set_HaloDotAPI_token(token)`.
 
 3.  Add your API token to your user-level `.Renviron` file so the token
-    is always available during `R` sessions. All requesting functions
-    use the `get_HaloDotAPI_token()` to automatically retrieve the token
-    when making a request. This is the recommended approach for token
-    use.
+    is always available during typical `R` sessions. All requesting
+    functions use the `get_HaloDotAPI_token()` to automatically retrieve
+    the token when performing a request. *This is the recommended
+    approach to make your API token available to authenticate requests.*
 
 ## Usage
 
-HaloDotAPI offers nine endpoints and the halo package offers
-corresponding functions
+The Halo Infinite API offers nine endpoints and the `halo` package
+offers corresponding functions:
 
 -   `halo_appearance()` - Returns targeted player’s appearance on Halo
     Infinite.
@@ -84,7 +85,7 @@ corresponding functions
 -   `halo_UGC()` - Search for UGC (User-Generated Content) items on Halo
     Infinite.
 
--   `halo_articles` - Returns available articles on Halo Infinite.
+-   `halo_articles()` - Returns available articles on Halo Infinite.
 
 -   `halo_medals()` - Returns available medals on Halo Infinite.
 
