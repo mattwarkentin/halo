@@ -13,7 +13,7 @@ halo_medals <- function(
 ) {
   HaloDotAPI(
     endpoint = 'metadata/medals/list',
-    version = verify_version(version),
+    version = version,
     token = token
   )
 }

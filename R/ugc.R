@@ -31,7 +31,7 @@ halo_UGC <- function(
     author = null_or_chr(author, 'author'),
     kind = null_or_chr(kind, 'kind'),
     tags = null_or_chr(tags),
-    version = verify_version(version),
+    version = version,
     token = token
   )
 }

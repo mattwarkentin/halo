@@ -19,7 +19,7 @@ halo_articles <- function(
   HaloDotAPI(
     endpoint = 'articles/list',
     language = verify_scalar_chr(language, 'language'),
-    version = verify_version(version),
+    version = version,
     token = token
   )
 }

@@ -18,10 +18,11 @@
 HaloDotAPI <- function(
     endpoint,
     ...,
-    version = get_HaloDotAPI_version(),
-    token = get_HaloDotAPI_token()
+    version,
+    token
 ) {
   endpoint <- verify_endpoint(endpoint)
+  version = verify_version(version)
   url <- glue::glue('https://halo.api.stdlib.com/infinite@{version}/')
   params <- rlang::list2(...)
 

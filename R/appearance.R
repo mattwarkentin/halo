@@ -16,7 +16,7 @@ halo_appearance <- function(
   HaloDotAPI(
     endpoint = 'appearance',
     gamertag = verify_scalar_chr(gamertag, 'gamertag'),
-    version = verify_version(version),
+    version = version,
     token = token
   )
 }

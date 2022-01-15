@@ -4,12 +4,7 @@
 \alias{HaloDotAPI}
 \title{Perform a Request to the Halo Infinite API}
 \usage{
-HaloDotAPI(
-  endpoint,
-  ...,
-  version = get_HaloDotAPI_version(),
-  token = get_HaloDotAPI_token()
-)
+HaloDotAPI(endpoint, ..., version, token)
 }
 \arguments{
 \item{endpoint}{Endpoint.}

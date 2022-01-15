@@ -19,7 +19,7 @@ halo_campaign <- function(
   HaloDotAPI(
     endpoint = 'stats/service-record/campaign',
     gamertag = verify_scalar_chr(gamertag, 'gamertag'),
-    version = verify_version(version),
+    version = version,
     token = token
   )
 }
@@ -48,7 +48,7 @@ halo_multiplayer <- function(
     endpoint = 'stats/service-record/multiplayer',
     gamertag = verify_scalar_chr(gamertag, 'gamertag'),
     filter = null_or_chr(filter, 'filter'),
-    version = verify_version(version),
+    version = version,
     token = token
   )
 }

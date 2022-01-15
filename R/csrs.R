@@ -19,7 +19,7 @@ halo_CSRS <- function(
     endpoint = 'stats/csrs',
     gamertag = verify_scalar_chr(gamertag, 'gamertag'),
     season = verify_scalar_int(season, 'season'),
-    version = verify_version(version),
+    version = version,
     token = token
   )
 }

@@ -24,7 +24,7 @@ halo_matches_list <- function(
     limit.count = verify_count(count),
     limit.offset = null_or_int(offset, 'offset'),
     mode = null_or_chr(mode, 'mode'),
-    version = verify_version(version),
+    version = version,
     token = token
   )
 }
@@ -61,7 +61,7 @@ halo_matches_retrieve <- function(
   HaloDotAPI(
     endpoint = 'stats/matches/retrieve',
     id = verify_scalar_chr(id),
-    version = verify_version(version),
+    version = version,
     token = token
   )
 }
