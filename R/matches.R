@@ -15,7 +15,7 @@ halo_matches_list <- function(
   count = NULL,
   offset = NULL,
   mode = NULL,
-  version = '0.3.6',
+  version = get_HaloDotAPI_version(),
   token = get_HaloDotAPI_token()
 ) {
   HaloDotAPI(
@@ -55,7 +55,7 @@ as_tibble.stats_matches_list <- function(x, ...) {
 #' @export
 halo_matches_retrieve <- function(
     id,
-    version = '0.3.6',
+    version = get_HaloDotAPI_version(),
     token = get_HaloDotAPI_token()
 ) {
   HaloDotAPI(

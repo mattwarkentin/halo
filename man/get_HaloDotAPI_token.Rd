@@ -13,9 +13,9 @@ set_HaloDotAPI_token(token = NULL)
 \item{token}{HaloDotAPI Token.}
 }
 \value{
-\code{get_HaloDotAPI_token()} returns the API token if it is
+\code{get_HaloDotAPI_token()} invisibly returns the API token if it is
 found as an environment variable.
 }
 \description{
-Get or set your HaloDotAPI access token as an environment variable.
+Get or set your Halo Infinite API access token as an environment variable.
 }

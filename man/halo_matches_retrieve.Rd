@@ -4,7 +4,11 @@
 \alias{halo_matches_retrieve}
 \title{Halo Infinite Match Details}
 \usage{
-halo_matches_retrieve(id, version = "0.3.6", token = get_HaloDotAPI_token())
+halo_matches_retrieve(
+  id,
+  version = get_HaloDotAPI_version(),
+  token = get_HaloDotAPI_token()
+)
 }
 \arguments{
 \item{id}{Match ID.}

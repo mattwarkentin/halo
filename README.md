@@ -73,7 +73,7 @@ offers corresponding functions:
 -   `halo_matches_list()` - Returns targeted player’s matches history on
     Halo Infinite.
 
--   `halo_matches_retieve()` - Returns targeted match’s details on Halo
+-   `halo_matches_retrieve()` - Returns targeted match’s details on Halo
     Infinite.
 
 -   `halo_campaign()` - Returns targeted player’s service record
@@ -90,7 +90,7 @@ offers corresponding functions:
 -   `halo_medals()` - Returns available medals on Halo Infinite.
 
 The Halo Infinite API always returns JSON objects, which are
-automatically converted to an `R` lists. See
+automatically converted to `R` lists. See
 <https://autocode.com/lib/halo/infinite/> for more details on the
 structure of the response object.
 

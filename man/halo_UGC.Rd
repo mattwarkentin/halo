@@ -10,7 +10,7 @@ halo_UGC(
   author = NULL,
   kind = NULL,
   tags = NULL,
-  version = "0.3.6",
+  version = get_HaloDotAPI_version(),
   token = get_HaloDotAPI_token()
 )
 }
@@ -21,7 +21,7 @@ halo_UGC(
 
 \item{author}{Asset's author (i.e. gamertag).}
 
-\item{kind}{Asset's kind.}
+\item{kind}{Asset's kind. One of \code{'Map'} or \code{'UgcGameVariant'}.}
 
 \item{tags}{Character vector of tags.}
 

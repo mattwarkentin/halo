@@ -6,12 +6,15 @@
 \usage{
 halo_articles(
   language = "en-US",
-  version = "0.3.6",
+  version = get_HaloDotAPI_version(),
   token = get_HaloDotAPI_token()
 )
 }
 \arguments{
-\item{language}{Desired language.}
+\item{language}{Desired language. One of \code{'de-DE'}, \code{'es-ES'},
+\code{'es-MX'}, \code{'en-US'}, \code{'fr-FR'}, \code{'it-IT'}, \code{'ja-JP'}, \code{'ko-KR'},
+\code{'pl-PL'}, \code{'pt-BR'}, \code{'ru-RU'}, \code{'zh-CN'}, or \code{'zh-HK'}.
+Default is \code{'en-US'}.}
 
 \item{version}{HaloDotAPI Version.}
 

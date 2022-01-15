@@ -2,7 +2,10 @@
 #'
 #' Returns available articles on Halo Infinite.
 #'
-#' @param language Desired language.
+#' @param language Desired language. One of `'de-DE'`, `'es-ES'`,
+#'   `'es-MX'`, `'en-US'`, `'fr-FR'`, `'it-IT'`, `'ja-JP'`, `'ko-KR'`,
+#'   `'pl-PL'`, `'pt-BR'`, `'ru-RU'`, `'zh-CN'`, or `'zh-HK'`.
+#'   Default is `'en-US'`.
 #' @inheritParams HaloDotAPI
 #'
 #' @return A `list` with class `articles`.
@@ -10,7 +13,7 @@
 #' @export
 halo_articles <- function(
     language = 'en-US',
-    version = '0.3.6',
+    version = get_HaloDotAPI_version(),
     token = get_HaloDotAPI_token()
 ) {
   HaloDotAPI(

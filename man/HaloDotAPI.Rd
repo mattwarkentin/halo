@@ -4,7 +4,12 @@
 \alias{HaloDotAPI}
 \title{Perform a Request to the Halo Infinite API}
 \usage{
-HaloDotAPI(endpoint, ..., version = "0.3.6", token = get_HaloDotAPI_token())
+HaloDotAPI(
+  endpoint,
+  ...,
+  version = get_HaloDotAPI_version(),
+  token = get_HaloDotAPI_token()
+)
 }
 \arguments{
 \item{endpoint}{Endpoint.}
@@ -19,8 +24,8 @@ HaloDotAPI(endpoint, ..., version = "0.3.6", token = get_HaloDotAPI_token())
 A \code{list} with a class that is specific to the chosen \code{endpoint}.
 }
 \description{
-This function is the main tool for making requests to the Halo Infinite
+This is a low-level function for making requests to the Halo Infinite
 API. Most users will not need to use this function directly, but will
-instead use the wrapper functions that are specific to the available
-endpoints.
+instead use one of the wrapper functions that are specific to the
+available endpoints.
 }

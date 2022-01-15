@@ -6,7 +6,7 @@
 #' @param count Number of items to retrieve.
 #' @param offset Number of items to offset.
 #' @param author Asset's author (i.e. gamertag).
-#' @param kind Asset's kind.
+#' @param kind Asset's kind. One of `'Map'` or `'UgcGameVariant'`.
 #' @param tags Character vector of tags.
 #'
 #' @return A `list` with class `ugc_search`.
@@ -18,7 +18,7 @@ halo_UGC <- function(
     author = NULL,
     kind = NULL,
     tags = NULL,
-    version = '0.3.6',
+    version = get_HaloDotAPI_version(),
     token = get_HaloDotAPI_token()
 ) {
   if (!rlang::is_null(tags)) {

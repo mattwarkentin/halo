@@ -7,7 +7,10 @@
 #' @return A `list` with class `metadata_medals_list`.
 #'
 #' @export
-halo_medals <- function(version = '0.3.6', token = get_HaloDotAPI_token()) {
+halo_medals <- function(
+    version = get_HaloDotAPI_version(),
+    token = get_HaloDotAPI_token()
+) {
   HaloDotAPI(
     endpoint = 'metadata/medals/list',
     version = verify_version(version),

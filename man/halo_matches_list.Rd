@@ -9,7 +9,7 @@ halo_matches_list(
   count = NULL,
   offset = NULL,
   mode = NULL,
-  version = "0.3.6",
+  version = get_HaloDotAPI_version(),
   token = get_HaloDotAPI_token()
 )
 }

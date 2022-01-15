@@ -4,7 +4,12 @@
 \alias{halo_CSRS}
 \title{Halo Infinite CSRS}
 \usage{
-halo_CSRS(gamertag, season, version = "0.3.6", token = get_HaloDotAPI_token())
+halo_CSRS(
+  gamertag,
+  season,
+  version = get_HaloDotAPI_version(),
+  token = get_HaloDotAPI_token()
+)
 }
 \arguments{
 \item{gamertag}{Player's Gamertag.}

@@ -4,7 +4,7 @@
 \alias{halo_medals}
 \title{Halo Infinite Medals}
 \usage{
-halo_medals(version = "0.3.6", token = get_HaloDotAPI_token())
+halo_medals(version = get_HaloDotAPI_version(), token = get_HaloDotAPI_token())
 }
 \arguments{
 \item{version}{HaloDotAPI Version.}

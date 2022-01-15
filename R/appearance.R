@@ -10,12 +10,12 @@
 #' @export
 halo_appearance <- function(
     gamertag,
-    version = '0.3.6',
+    version = get_HaloDotAPI_version(),
     token = get_HaloDotAPI_token()
 ) {
   HaloDotAPI(
     endpoint = 'appearance',
-    gamertag = verify_scalar_chr(gamertag),
+    gamertag = verify_scalar_chr(gamertag, 'gamertag'),
     version = verify_version(version),
     token = token
   )

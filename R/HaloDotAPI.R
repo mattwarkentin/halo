@@ -1,9 +1,9 @@
 #' Perform a Request to the Halo Infinite API
 #'
-#' This function is the main tool for making requests to the Halo Infinite
+#' This is a low-level function for making requests to the Halo Infinite
 #'   API. Most users will not need to use this function directly, but will
-#'   instead use the wrapper functions that are specific to the available
-#'   endpoints.
+#'   instead use one of the wrapper functions that are specific to the
+#'   available endpoints.
 #'
 #' @param endpoint Endpoint.
 #' @param ... Query parameters passed on to the chosen `endpoint`.
@@ -18,7 +18,7 @@
 HaloDotAPI <- function(
     endpoint,
     ...,
-    version = '0.3.6',
+    version = get_HaloDotAPI_version(),
     token = get_HaloDotAPI_token()
 ) {
   endpoint <- verify_endpoint(endpoint)
@@ -40,4 +40,23 @@ HaloDotAPI <- function(
     .Data = resp,
     class = c(ep_class, 'HaloDotAPI', class(resp))
   )
+}
+
+HaloDotAPI_endpoints <- c(
+  'appearance',
+  'stats/csrs',
+  'stats/matches/list',
+  'stats/matches/retrieve',
+  'stats/service-record/campaign',
+  'stats/service-record/multiplayer',
+  'ugc/search',
+  'articles/list',
+  'metadata/medals/list'
+)
+
+verify_endpoint <- function(endpoint) {
+  if (!endpoint %in% HaloDotAPI_endpoints) {
+    rlang::abort('Not a valid endpoint!')
+  }
+  endpoint
 }

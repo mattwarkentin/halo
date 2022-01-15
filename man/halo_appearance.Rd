@@ -4,7 +4,11 @@
 \alias{halo_appearance}
 \title{Halo Infinite Player Appearance}
 \usage{
-halo_appearance(gamertag, version = "0.3.6", token = get_HaloDotAPI_token())
+halo_appearance(
+  gamertag,
+  version = get_HaloDotAPI_version(),
+  token = get_HaloDotAPI_token()
+)
 }
 \arguments{
 \item{gamertag}{Player's Gamertag.}

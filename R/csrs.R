@@ -12,7 +12,7 @@
 halo_CSRS <- function(
     gamertag,
     season,
-    version = '0.3.6',
+    version = get_HaloDotAPI_version(),
     token = get_HaloDotAPI_token()
 ) {
   HaloDotAPI(

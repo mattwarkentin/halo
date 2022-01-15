@@ -4,7 +4,8 @@
 #'
 #' @inheritParams HaloDotAPI
 #' @inheritParams halo_appearance
-#' @param filter Filter.
+#' @param filter Filter. One of `'matchmade:pvp'`, `'matchmade:social'`,
+#'   `'matchmade:ranked'`, `'matchmade:bots'`, or `'custom'`.
 #'
 #' @return A `list` with either class `stats_service_record_campaign` or
 #'   `stats_service_record_multiplayer`.
@@ -12,7 +13,7 @@
 #' @export
 halo_campaign <- function(
     gamertag,
-    version = '0.3.6',
+    version = get_HaloDotAPI_version(),
     token = get_HaloDotAPI_token()
 ) {
   HaloDotAPI(
@@ -40,7 +41,7 @@ as_tibble.stats_service_record_campaign <- function(x, ...) {
 halo_multiplayer <- function(
     gamertag,
     filter = NULL,
-    version = '0.3.6',
+    version = get_HaloDotAPI_version(),
     token = get_HaloDotAPI_token()
 ) {
   HaloDotAPI(

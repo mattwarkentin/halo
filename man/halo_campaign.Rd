@@ -5,12 +5,16 @@
 \alias{halo_multiplayer}
 \title{Halo Infinite Service Record}
 \usage{
-halo_campaign(gamertag, version = "0.3.6", token = get_HaloDotAPI_token())
+halo_campaign(
+  gamertag,
+  version = get_HaloDotAPI_version(),
+  token = get_HaloDotAPI_token()
+)
 
 halo_multiplayer(
   gamertag,
   filter = NULL,
-  version = "0.3.6",
+  version = get_HaloDotAPI_version(),
   token = get_HaloDotAPI_token()
 )
 }
@@ -21,7 +25,8 @@ halo_multiplayer(
 
 \item{token}{HaloDotAPI Token.}
 
-\item{filter}{Filter.}
+\item{filter}{Filter. One of \code{'matchmade:pvp'}, \code{'matchmade:social'},
+\code{'matchmade:ranked'}, \code{'matchmade:bots'}, or \code{'custom'}.}
 }
 \value{
 A \code{list} with either class \code{stats_service_record_campaign} or

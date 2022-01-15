@@ -1,19 +1,19 @@
 #' Halo Infinite API Token Management
 #'
-#' Get or set your HaloDotAPI access token as an environment variable.
+#' Get or set your Halo Infinite API access token as an environment variable.
 #'
 #' @inheritParams HaloDotAPI
 #'
-#' @return `get_HaloDotAPI_token()` returns the API token if it is
+#' @return `get_HaloDotAPI_token()` invisibly returns the API token if it is
 #'   found as an environment variable.
 #'
 #' @export
 get_HaloDotAPI_token <- function() {
   token <- Sys.getenv('HALODOTAPI_TOKEN')
   if (identical(token, '')) {
-    rlang::abort('No API key found!')
+    rlang::abort('No Halo Infinite API key found!')
   }
-  token
+  invisible(token)
 }
 
 #' @export
@@ -23,5 +23,4 @@ set_HaloDotAPI_token <- function(token = NULL) {
     token <- askpass::askpass('Please enter your HaloDotAPI token')
   }
   Sys.setenv('HALODOTAPI_TOKEN' = token)
-  return(invisible())
 }
