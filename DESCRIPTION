@@ -18,3 +18,5 @@ Imports:
     rlang,
     tibble,
     tidyr
+Remotes:  
+    r-lib/rlang
