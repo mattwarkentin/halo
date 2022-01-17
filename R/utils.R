@@ -26,7 +26,7 @@ null_or_chr <- function(x, y) {
   if (rlang::is_null(x)) {
     return(NULL)
   } else if (!rlang::is_scalar_character(x)) {
-    rlang::abort(glue::glue('`{y}` must be a length one integer!'))
+    rlang::abort(glue::glue('`{y}` must be a length one character!'))
   }
   x
 }

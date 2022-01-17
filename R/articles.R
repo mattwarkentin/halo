@@ -16,6 +16,7 @@ halo_articles <- function(
     version = get_HaloDotAPI_version(),
     token = get_HaloDotAPI_token()
 ) {
+  rlang::check_required(language)
   HaloDotAPI(
     endpoint = 'articles/list',
     language = verify_scalar_chr(language, 'language'),

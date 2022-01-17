@@ -6,7 +6,7 @@
 \usage{
 halo_CSRS(
   gamertag,
-  season,
+  season = NULL,
   version = get_HaloDotAPI_version(),
   token = get_HaloDotAPI_token()
 )

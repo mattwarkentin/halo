@@ -22,5 +22,5 @@ set_HaloDotAPI_token <- function(token = NULL) {
   if (rlang::is_null(token)) {
     token <- askpass::askpass('Please enter your HaloDotAPI token')
   }
-  Sys.setenv('HALODOTAPI_TOKEN' = token)
+  Sys.setenv('HALODOTAPI_TOKEN' = verify_scalar_chr(token, 'token'))
 }

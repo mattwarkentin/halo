@@ -16,6 +16,7 @@ halo_campaign <- function(
     version = get_HaloDotAPI_version(),
     token = get_HaloDotAPI_token()
 ) {
+  rlang::check_required(gamertag)
   HaloDotAPI(
     endpoint = 'stats/service-record/campaign',
     gamertag = verify_scalar_chr(gamertag, 'gamertag'),
@@ -44,6 +45,7 @@ halo_multiplayer <- function(
     version = get_HaloDotAPI_version(),
     token = get_HaloDotAPI_token()
 ) {
+  rlang::check_required(gamertag)
   HaloDotAPI(
     endpoint = 'stats/service-record/multiplayer',
     gamertag = verify_scalar_chr(gamertag, 'gamertag'),

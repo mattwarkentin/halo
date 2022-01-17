@@ -11,14 +11,15 @@
 #' @export
 halo_CSRS <- function(
     gamertag,
-    season,
+    season = NULL,
     version = get_HaloDotAPI_version(),
     token = get_HaloDotAPI_token()
 ) {
+  rlang::check_required(gamertag)
   HaloDotAPI(
     endpoint = 'stats/csrs',
     gamertag = verify_scalar_chr(gamertag, 'gamertag'),
-    season = verify_scalar_int(season, 'season'),
+    season = null_or_int(season, 'season'),
     version = version,
     token = token
   )
