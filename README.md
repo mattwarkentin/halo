@@ -47,12 +47,17 @@ several ways.
 
 1.  Each request function accepts a `token` argument which allows you to
     provide the token directly. This approach is overly verbose and is
-    generally not recommended except for quick interactive uses.
+    generally not recommended as this requires you to supply your token
+    for each request and the token may be stored in your `.Rhistory` and
+    accidentally shared.
 
-2.  Set the environment variable `HALODOTAPI_TOKEN`, and any API request
-    will automatically bundle this token in the request for
-    authentication. This package provides a function for setting the
-    environment variable via `set_HaloDotAPI_token(token)`.
+2.  Each `R` session, set the environment variable `HALODOTAPI_TOKEN`,
+    and any API request will automatically bundle this token in the
+    request for authentication. This package provides a function for
+    setting the environment variable via `set_HaloDotAPI_token()`.
+    Calling `set_HaloDotAPI_token()` without any arguments will allow
+    you to securely provide your token in a pop-up to avoid entering the
+    token into the `R` terminal.
 
 3.  Add your API token to your user-level `.Renviron` file so the token
     is always available during typical `R` sessions. All requesting
