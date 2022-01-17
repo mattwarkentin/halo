@@ -18,5 +18,7 @@ Imports:
     rlang,
     tibble,
     tidyr
-Remotes:  
+Remotes: 
     r-lib/rlang
+URL: https://mattwarkentin.github.io/halo/, https://github.com/mattwarkentin/halo
+BugReports: https://github.com/mattwarkentin/halo/issues

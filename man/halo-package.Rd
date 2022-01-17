@@ -8,6 +8,15 @@
 \description{
 Request data from the Halo Infinite API.
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://mattwarkentin.github.io/halo/}
+  \item \url{https://github.com/mattwarkentin/halo}
+  \item Report bugs at \url{https://github.com/mattwarkentin/halo/issues}
+}
+
+}
 \author{
 \strong{Maintainer}: Matthew T. Warkentin \email{warkentin@lunenfeld.ca} (\href{https://orcid.org/0000-0001-8730-3511}{ORCID})
 
