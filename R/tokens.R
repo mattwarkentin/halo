@@ -1,6 +1,9 @@
 #' Halo Infinite API Token Management
 #'
 #' Get or set your Halo Infinite API access token as an environment variable.
+#'   Calling `set_HaloDotAPI_token()` without the `token` argument will allow
+#'   the user to provide their token in a pop-up window using
+#'   `askpass::askpass()` to avoid entering the token into the `R` terminal.
 #'
 #' @inheritParams HaloDotAPI
 #'

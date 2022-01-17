@@ -18,4 +18,7 @@ found as an environment variable.
 }
 \description{
 Get or set your Halo Infinite API access token as an environment variable.
+Calling \code{set_HaloDotAPI_token()} without the \code{token} argument will allow
+the user to provide their token in a pop-up window using
+\code{askpass::askpass()} to avoid entering the token into the \code{R} terminal.
 }
