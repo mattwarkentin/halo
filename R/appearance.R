@@ -21,7 +21,6 @@ halo_appearance <- function(
   )
 }
 
-#' @importFrom tibble as_tibble
 #' @export
 as_tibble.appearance <- function(x, ...) {
   tibble::enframe(rev(x)) %>%
@@ -29,3 +28,7 @@ as_tibble.appearance <- function(x, ...) {
     tidyr::unnest_wider(additional) %>%
     tidyr::unnest_wider(data)
 }
+
+#' @importFrom tibble as_tibble
+#' @export
+tibble::as_tibble
