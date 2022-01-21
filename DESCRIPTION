@@ -15,7 +15,7 @@ Imports:
     httr2,
     magrittr,
     purrr,
-    rlang,
+    rlang (>= 1.0.0),
     tibble,
     tidyr
 Remotes: 
