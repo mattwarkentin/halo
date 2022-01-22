@@ -15,7 +15,6 @@ halo_CSRS <- function(
     version = get_HaloDotAPI_version(),
     token = get_HaloDotAPI_token()
 ) {
-  rlang::check_required(gamertag)
   HaloDotAPI(
     endpoint = 'stats/csrs',
     gamertag = verify_scalar_chr(gamertag, 'gamertag'),

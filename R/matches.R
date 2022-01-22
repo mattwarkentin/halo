@@ -18,7 +18,6 @@ halo_matches_list <- function(
   version = get_HaloDotAPI_version(),
   token = get_HaloDotAPI_token()
 ) {
-  rlang::check_required(gamertag)
   HaloDotAPI(
     endpoint = 'stats/matches/list',
     gamertag = verify_scalar_chr(gamertag, 'gamertag'),
@@ -59,7 +58,6 @@ halo_matches_retrieve <- function(
     version = get_HaloDotAPI_version(),
     token = get_HaloDotAPI_token()
 ) {
-  rlang::check_required(id)
   HaloDotAPI(
     endpoint = 'stats/matches/retrieve',
     id = verify_scalar_chr(id, 'id'),
