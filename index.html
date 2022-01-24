@@ -89,7 +89,7 @@
 </ol>
 </div>
 <div class="section level2">
-<h2 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a>
+<h2 id="api-endpoints">API Endpoints<a class="anchor" aria-label="anchor" href="#api-endpoints"></a>
 </h2>
 <p>The Halo Infinite API offers nine endpoints and the <code>halo</code> package offers corresponding functions:</p>
 <ul>
@@ -104,6 +104,25 @@
 <li><p><code><a href="reference/halo_medals.html">halo_medals()</a></code> - Returns available medals on Halo Infinite.</p></li>
 </ul>
 <p>The Halo Infinite API always returns JSON objects, which are automatically converted to <code>R</code> lists. See <a href="https://autocode.com/lib/halo/infinite/" class="external-link uri">https://autocode.com/lib/halo/infinite/</a> for more details on the structure of the response object.</p>
+</div>
+<div class="section level2">
+<h2 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a>
+</h2>
+<p>Once you have obtained your API token and have made it avilable for <code>halo</code> to use, you may call any of the above functions to perform a data request.</p>
+<p>Lets say we want to obtain the multiplayer data for a single gamertag:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="reference/halo_campaign.html">halo_multiplayer</a></span><span class="op">(</span><span class="st">'Luciid TW'</span><span class="op">)</span></code></pre></div>
+<p>We may wish to obtain data for multiple players - simply pass a vector of gamertags to the function:</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="reference/halo_campaign.html">halo_multiplayer</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'Luciid TW'</span>, <span class="st">'Renegade JW'</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<p>Some API endpoints take longer to run and you may wish to perform these queries in parallel. Parallel processing is supported by the <a href="https://github.com/DavisVaughan/furrr" class="external-link">furrr</a> and <a href="https://future.futureverse.org" class="external-link">future</a> packages. Declare your parallel processing strategy and run the functions as you normally would. If we have a multi-core machine, we may wish to run two parallel R processes to make the API requests:</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://future.futureverse.org" class="external-link">future</a></span><span class="op">)</span>
+
+<span class="fu"><a href="https://future.futureverse.org/reference/plan.html" class="external-link">plan</a></span><span class="op">(</span><span class="va">multisession</span>, workers <span class="op">=</span> <span class="fl">2</span><span class="op">)</span>
+
+<span class="co"># Each request is done in a separate process</span>
+<span class="fu"><a href="reference/halo_campaign.html">halo_multiplayer</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'Luciid TW'</span>, <span class="st">'Renegade JW'</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="code-of-conduct">Code of Conduct<a class="anchor" aria-label="anchor" href="#code-of-conduct"></a>
