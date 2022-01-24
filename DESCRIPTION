@@ -11,12 +11,10 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.2
 Imports: 
     askpass,
+    furrr,
     glue,
     httr2,
     magrittr,
-    purrr,
-    rlang,
-    tibble,
-    tidyr
+    rlang
 URL: https://mattwarkentin.github.io/halo/, https://github.com/mattwarkentin/halo
 BugReports: https://github.com/mattwarkentin/halo/issues

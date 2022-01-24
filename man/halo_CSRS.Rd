@@ -8,17 +8,21 @@ halo_CSRS(
   gamertag,
   season = NULL,
   version = get_HaloDotAPI_version(),
-  token = get_HaloDotAPI_token()
+  token = get_HaloDotAPI_token(),
+  .progress = TRUE
 )
 }
 \arguments{
-\item{gamertag}{Player's Gamertag.}
+\item{gamertag}{Character vector of gamertags.}
 
 \item{season}{Targeted season.}
 
 \item{version}{HaloDotAPI Version.}
 
 \item{token}{HaloDotAPI Token.}
+
+\item{.progress}{Logical. Should a progress bar be displayed? Passed on to
+\code{furrr::future_map()}.}
 }
 \value{
 A \code{list} with class \code{stats_csrs}.

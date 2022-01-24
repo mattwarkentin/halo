@@ -13,26 +13,22 @@ halo_CSRS <- function(
     gamertag,
     season = NULL,
     version = get_HaloDotAPI_version(),
-    token = get_HaloDotAPI_token()
+    token = get_HaloDotAPI_token(),
+    .progress = TRUE
 ) {
-  HaloDotAPI(
-    endpoint = 'stats/csrs',
-    gamertag = verify_scalar_chr(gamertag, 'gamertag'),
-    season = null_or_int(season, 'season'),
-    version = version,
-    token = token
+  gamertag <- verify_vector_chr(gamertag, 'gamertag')
+  furrr::future_map(
+    .x = gamertag,
+    .f = function(gamertag) {
+      HaloDotAPI(
+        gamertag = gamertag,
+        endpoint = 'stats/csrs',
+        season = null_or_int(season, 'season'),
+        version = version,
+        token = token
+      )
+    },
+    .options = furrr::furrr_options(seed = NULL),
+    .progress = .progress
   )
-}
-
-#' @importFrom tibble as_tibble
-#' @export
-as_tibble.stats_csrs <- function(x, ...) {
-  tibble::as_tibble(x$data) %>%
-    tidyr::unnest(tidyr::everything()) %>%
-    tidyr::unnest(tidyr::everything(), names_sep = '_') %>%
-    tibble::add_column(
-      gamertag = x$additional$gamertag,
-      season = x$additional$season,
-      .before = 'queue'
-    )
 }

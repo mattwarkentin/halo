@@ -35,16 +35,3 @@ halo_UGC <- function(
     token = token
   )
 }
-
-#' @importFrom tibble as_tibble
-#' @export
-as_tibble.ugc_search <- function(x, ...) {
-  tibble::enframe(x) %>%
-    tidyr::pivot_wider() %>%
-    tidyr::unnest(count) %>%
-    tidyr::unnest_wider(paging, names_sep = '_') %>%
-    tidyr::unnest_wider(additional) %>%
-    tidyr::unnest(data, names_sep = '_') %>%
-    tidyr::unnest(data_stats) %>%
-    tidyr::unnest(plays, names_sep = '_')
-}

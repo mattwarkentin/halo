@@ -17,10 +17,3 @@ halo_medals <- function(
     token = token
   )
 }
-
-#' @importFrom tibble as_tibble
-#' @export
-as_tibble.metadata_medals_list <- function(x, ...) {
-  tibble::as_tibble(x$data) %>%
-    tidyr::unnest(tidyr::everything(), names_sep = '_')
-}

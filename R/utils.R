@@ -1,10 +1,16 @@
+verify_vector_chr <- function(x, y) {
+  if (!rlang::is_character(x)) {
+    rlang::abort(glue::glue('`{y}` must be a character vector!'))
+  }
+  x
+}
+
 verify_scalar_chr <- function(x, y) {
   if (!rlang::is_scalar_character(x)) {
     rlang::abort(glue::glue('`{y}` must be a length one character vector!'))
   }
   x
 }
-
 
 verify_scalar_int <- function(x, y) {
   if (!rlang::is_scalar_integerish(x)) {

@@ -14,27 +14,25 @@
 halo_campaign <- function(
     gamertag,
     version = get_HaloDotAPI_version(),
-    token = get_HaloDotAPI_token()
+    token = get_HaloDotAPI_token(),
+    .progress = TRUE
 ) {
-  HaloDotAPI(
-    endpoint = 'stats/service-record/campaign',
-    gamertag = verify_scalar_chr(gamertag, 'gamertag'),
-    version = version,
-    token = token
+  gamertag <- verify_vector_chr(gamertag, 'gamertag')
+  furrr::future_map(
+    .x = gamertag,
+    .f = function(gamertag) {
+      HaloDotAPI(
+        endpoint = 'stats/service-record/campaign',
+        gamertag = gamertag,
+        version = version,
+        token = token
+      )
+    },
+    .options = furrr::furrr_options(seed = NULL),
+    .progress = .progress
   )
 }
 
-#' @importFrom tibble as_tibble
-#' @export
-as_tibble.stats_service_record_campaign <- function(x, ...) {
-  tibble::enframe(rev(x)) %>%
-    tidyr::pivot_wider() %>%
-    tidyr::unnest_wider(additional) %>%
-    tidyr::unnest_wider(data) %>%
-    tidyr::unnest_wider(c(audio_logs), names_sep = '_') %>%
-    tidyr::unnest_wider(c(difficulty), names_sep = '_') %>%
-    tidyr::unnest(tidyr::everything())
-}
 
 #' @export
 #' @rdname halo_campaign
@@ -42,22 +40,22 @@ halo_multiplayer <- function(
     gamertag,
     filter = NULL,
     version = get_HaloDotAPI_version(),
-    token = get_HaloDotAPI_token()
+    token = get_HaloDotAPI_token(),
+    .progress = TRUE
 ) {
-  HaloDotAPI(
-    endpoint = 'stats/service-record/multiplayer',
-    gamertag = verify_scalar_chr(gamertag, 'gamertag'),
-    filter = null_or_chr(filter, 'filter'),
-    version = version,
-    token = token
+  gamertag <- verify_vector_chr(gamertag, 'gamertag')
+  furrr::future_map(
+    .x = gamertag,
+    .f = function(gamertag) {
+      HaloDotAPI(
+        endpoint = 'stats/service-record/multiplayer',
+        gamertag = gamertag,
+        filter = null_or_chr(filter, 'filter'),
+        version = version,
+        token = token
+      )
+    },
+    .options = furrr::furrr_options(seed = NULL),
+    .progress = .progress
   )
-}
-
-#' @importFrom tibble as_tibble
-#' @export
-as_tibble.stats_service_record_multiplayer <- function(x, ...) {
-  tibble::enframe(rev(x)) %>%
-    tidyr::pivot_wider() %>%
-    tidyr::unnest_wider(additional) %>%
-    tidyr::unnest_wider(data, names_sep = '_')
 }
