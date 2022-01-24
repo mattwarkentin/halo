@@ -30,7 +30,7 @@ halo_UGC(
 \item{token}{HaloDotAPI Token.}
 }
 \value{
-A \code{list} with class \code{ugc_search}.
+A \code{list} with class \code{ugc}.
 }
 \description{
 Search for UGC (User-Generated Content) items on Halo Infinite.

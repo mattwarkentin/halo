@@ -25,7 +25,9 @@ halo_CSRS(
 \code{furrr::future_map()}.}
 }
 \value{
-A \code{list} with class \code{stats_csrs}.
+For a single gamertag, a \code{list} with class \code{csrs}. For
+multiple gamertags, a \code{list} with class \code{collection} where each item in
+the \code{list} is a \code{list} with class \code{csrs}.
 }
 \description{
 Returns targeted player's CSRS on Halo Infinite.

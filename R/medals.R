@@ -4,7 +4,7 @@
 #'
 #' @inheritParams HaloDotAPI
 #'
-#' @return A `list` with class `metadata_medals_list`.
+#' @return A `list` with class `medals`.
 #'
 #' @export
 halo_medals <- function(
@@ -14,6 +14,7 @@ halo_medals <- function(
   HaloDotAPI(
     endpoint = 'metadata/medals/list',
     version = version,
-    token = token
+    token = token,
+    class = 'medals'
   )
 }

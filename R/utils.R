@@ -50,19 +50,9 @@ verify_count <- function(x) {
   x
 }
 
-utils::globalVariables(
-  names = c(
-    'additional',
-    'data',
-    'id',
-    'experience',
-    'played_at',
-    'audio_logs',
-    'difficulty',
-    'count',
-    'offset',
-    'paging',
-    'data_stats',
-    'plays'
+make_collection <- function(x) {
+  structure(
+    x,
+    class = c('collection', 'HaloDotAPI', class(x))
   )
-)
+}

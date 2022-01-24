@@ -9,6 +9,7 @@
 #' @param ... Query parameters passed on to the chosen `endpoint`.
 #' @param version HaloDotAPI Version.
 #' @param token HaloDotAPI Token.
+#' @param class Class for returned object.
 #'
 #' @return A `list` with a class that is specific to the chosen `endpoint`.
 #'
@@ -19,7 +20,8 @@ HaloDotAPI <- function(
     endpoint,
     ...,
     version,
-    token
+    token,
+    class
 ) {
   endpoint <- verify_endpoint(endpoint)
   version = verify_version(version)
@@ -35,11 +37,9 @@ HaloDotAPI <- function(
     httr2::req_perform() %>%
     httr2::resp_body_json(simplifyVector = TRUE)
 
-  ep_class <- gsub('[[:punct:]]', '_', endpoint)
-
   structure(
     .Data = resp,
-    class = c(ep_class, 'HaloDotAPI', class(resp))
+    class = c(class, 'HaloDotAPI', class(resp))
   )
 }
 

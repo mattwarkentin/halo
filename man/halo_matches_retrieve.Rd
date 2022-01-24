@@ -22,7 +22,9 @@ halo_matches_retrieve(
 \code{furrr::future_map()}.}
 }
 \value{
-A \code{list} with class \code{stats_matches_retrieve}.
+For a single ID, a \code{list} with class \code{match}. For
+multiple IDs, a \code{list} with class \code{collection} where each item in
+the \code{list} is a \code{list} with class \code{match}.
 }
 \description{
 Returns targeted match's details on Halo Infinite.

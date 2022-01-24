@@ -4,6 +4,10 @@
 #'
 #' @inheritParams HaloDotAPI
 #'
+#' @details  Unless otherwise specified, all of the requesting functions will,
+#'   by default, use the most recent version of the Halo Infinite API as listed
+#'   in `HaloDotAPI_versions`.
+#'
 #' @return `get_HaloDotAPI_version()` returns the API version if it is
 #'   found as an environment variable.
 #'

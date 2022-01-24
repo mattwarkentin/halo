@@ -9,7 +9,7 @@
 #' @param kind Asset's kind. One of `'Map'` or `'UgcGameVariant'`.
 #' @param tags Character vector of tags.
 #'
-#' @return A `list` with class `ugc_search`.
+#' @return A `list` with class `ugc`.
 #'
 #' @export
 halo_UGC <- function(
@@ -32,6 +32,7 @@ halo_UGC <- function(
     kind = null_or_chr(kind, 'kind'),
     tags = null_or_chr(tags),
     version = version,
-    token = token
+    token = token,
+    class = 'ugc'
   )
 }

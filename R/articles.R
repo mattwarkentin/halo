@@ -20,6 +20,7 @@ halo_articles <- function(
     endpoint = 'articles/list',
     language = verify_scalar_chr(language, 'language'),
     version = version,
-    token = token
+    token = token,
+    class = 'articles'
   )
 }

@@ -63,7 +63,7 @@ several ways.
     the token when performing a request. *This is the recommended
     approach to make your API token available to authenticate requests.*
 
-## Usage
+## API Endpoints
 
 The Halo Infinite API offers nine endpoints and the `halo` package
 offers corresponding functions:
@@ -96,6 +96,41 @@ The Halo Infinite API always returns JSON objects, which are
 automatically converted to `R` lists. See
 <https://autocode.com/lib/halo/infinite/> for more details on the
 structure of the response object.
+
+## Usage
+
+Once you have obtained your API token and have made it avilable for
+`halo` to use, you may call any of the above functions to perform a data
+request.
+
+Lets say we want to obtain the multiplayer data for a single gamertag:
+
+``` r
+halo_multiplayer('Luciid TW')
+```
+
+We may wish to obtain data for multiple players - simply pass a vector
+of gamertags to the function:
+
+``` r
+halo_multiplayer(c('Luciid TW', 'Renegade JW'))
+```
+
+Some API endpoints take longer to run and you may wish to perform these
+queries in parallel. Parallel processing is supported by the `{furrr}`
+and `{future}` packages. Declare your parallel processing strategy and
+run the functions as you normally would. If we have a multi-core
+machine, we may wish to run two parallel R processes to make the API
+requests:
+
+``` r
+library(future)
+
+plan(multisession, workers = 2)
+
+# Each request is done in a separate process
+halo_multiplayer(c('Luciid TW', 'Renegade JW'))
+```
 
 ## Code of Conduct
 

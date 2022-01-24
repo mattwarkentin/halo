@@ -34,8 +34,10 @@ halo_multiplayer(
 \code{'matchmade:ranked'}, \code{'matchmade:bots'}, or \code{'custom'}.}
 }
 \value{
-A \code{list} with either class \code{stats_service_record_campaign} or
-\code{stats_service_record_multiplayer}.
+For a single gamertag, a \code{list} with class \code{campaign} or
+\code{multiplayer}. For multiple gamertags, a \code{list} with class \code{collection}
+where each item in the \code{list} is a \code{list} with class \code{campaign} or
+\code{multiplayer}.
 }
 \description{
 Returns targeted player's service record on Halo Infinite.

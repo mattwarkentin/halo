@@ -7,7 +7,9 @@
 #' @inheritParams halo_UGC
 #' @param mode Targeted mode. One of `'matchmade'` or `'custom'`.
 #'
-#' @return A `list` with class `stats_matches_list`.
+#' @return For a single gamertag, a `list` with class `matches`. For
+#'   multiple gamertags, a `list` with class `collection` where each item in
+#'   the `list` is a `list` with class `matches`.
 #'
 #' @export
 halo_matches_list <- function(
@@ -20,7 +22,7 @@ halo_matches_list <- function(
   .progress = TRUE
 ) {
   gamertag <- verify_vector_chr(gamertag, 'gamertag')
-  furrr::future_map(
+  resps <- furrr::future_map(
     .x = gamertag,
     .f = function(gamertag) {
       HaloDotAPI(
@@ -30,12 +32,15 @@ halo_matches_list <- function(
         limit.offset = null_or_int(offset, 'offset'),
         mode = null_or_chr(mode, 'mode'),
         version = version,
-        token = token
+        token = token,
+        class = 'matches'
       )
     },
     .options = furrr::furrr_options(seed = NULL),
     .progress = .progress
   )
+  if (length(gamertag) == 1) return(resps[[1]])
+  make_collection(resps)
 }
 
 
@@ -47,7 +52,10 @@ halo_matches_list <- function(
 #' @inheritParams halo_appearance
 #' @param id Character vector of match IDs.
 #'
-#' @return A `list` with class `stats_matches_retrieve`.
+#' @return For a single ID, a `list` with class `match`. For
+#'   multiple IDs, a `list` with class `collection` where each item in
+#'   the `list` is a `list` with class `match`.
+#'
 #' @export
 halo_matches_retrieve <- function(
     id,
@@ -56,17 +64,20 @@ halo_matches_retrieve <- function(
     .progress = TRUE
 ) {
   id <- verify_vector_chr(id, 'id')
-  furrr::future_map(
+  resps <- furrr::future_map(
     .x = id,
     .f = function(id) {
       HaloDotAPI(
         endpoint = 'stats/matches/list',
         id = id,
         version = version,
-        token = token
+        token = token,
+        class = 'match'
       )
     },
     .options = furrr::furrr_options(seed = NULL),
     .progress = .progress
   )
+  if (length(id) == 1) return(resps[[1]])
+  make_collection(resps)
 }

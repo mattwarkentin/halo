@@ -26,4 +26,9 @@ found as an environment variable.
 \description{
 Get or set your Halo Infinite API version as an environment variable.
 }
+\details{
+Unless otherwise specified, all of the requesting functions will,
+by default, use the most recent version of the Halo Infinite API as listed
+in \code{HaloDotAPI_versions}.
+}
 \keyword{datasets}

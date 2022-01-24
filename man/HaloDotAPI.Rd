@@ -4,7 +4,7 @@
 \alias{HaloDotAPI}
 \title{Perform a Request to the Halo Infinite API}
 \usage{
-HaloDotAPI(endpoint, ..., version, token)
+HaloDotAPI(endpoint, ..., version, token, class)
 }
 \arguments{
 \item{endpoint}{Endpoint.}
@@ -14,6 +14,8 @@ HaloDotAPI(endpoint, ..., version, token)
 \item{version}{HaloDotAPI Version.}
 
 \item{token}{HaloDotAPI Token.}
+
+\item{class}{Class for returned object.}
 }
 \value{
 A \code{list} with a class that is specific to the chosen \code{endpoint}.

@@ -6,7 +6,9 @@
 #' @inheritParams halo_appearance
 #' @param season Targeted season.
 #'
-#' @return A `list` with class `stats_csrs`.
+#' @return For a single gamertag, a `list` with class `csrs`. For
+#'   multiple gamertags, a `list` with class `collection` where each item in
+#'   the `list` is a `list` with class `csrs`.
 #'
 #' @export
 halo_CSRS <- function(
@@ -17,7 +19,7 @@ halo_CSRS <- function(
     .progress = TRUE
 ) {
   gamertag <- verify_vector_chr(gamertag, 'gamertag')
-  furrr::future_map(
+  resps <- furrr::future_map(
     .x = gamertag,
     .f = function(gamertag) {
       HaloDotAPI(
@@ -25,10 +27,13 @@ halo_CSRS <- function(
         endpoint = 'stats/csrs',
         season = null_or_int(season, 'season'),
         version = version,
-        token = token
+        token = token,
+        class = 'csrs'
       )
     },
     .options = furrr::furrr_options(seed = NULL),
     .progress = .progress
   )
+  if (length(gamertag) == 1) return(resps[[1]])
+  make_collection(resps)
 }

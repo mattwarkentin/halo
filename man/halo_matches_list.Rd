@@ -31,7 +31,9 @@ halo_matches_list(
 \code{furrr::future_map()}.}
 }
 \value{
-A \code{list} with class \code{stats_matches_list}.
+For a single gamertag, a \code{list} with class \code{matches}. For
+multiple gamertags, a \code{list} with class \code{collection} where each item in
+the \code{list} is a \code{list} with class \code{matches}.
 }
 \description{
 Returns targeted player's matches history on Halo Infinite.

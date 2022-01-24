@@ -12,7 +12,7 @@ halo_medals(version = get_HaloDotAPI_version(), token = get_HaloDotAPI_token())
 \item{token}{HaloDotAPI Token.}
 }
 \value{
-A \code{list} with class \code{metadata_medals_list}.
+A \code{list} with class \code{medals}.
 }
 \description{
 Returns available medals on Halo Infinite.

@@ -7,7 +7,9 @@
 #'   `furrr::future_map()`.
 #' @inheritParams HaloDotAPI
 #'
-#' @return A `list` with class `appearance`.
+#' @return For a single gamertag, a `list` with class `appearance`. For
+#'   multiple gamertags, a `list` with class `collection` where each item in
+#'   the `list` is a `list` with class `appearance`.
 #'
 #' @export
 halo_appearance <- function(
@@ -17,17 +19,20 @@ halo_appearance <- function(
     .progress = TRUE
 ) {
   gamertag <- verify_vector_chr(gamertag, 'gamertag')
-  furrr::future_map(
+  resps <- furrr::future_map(
     .x = gamertag,
     .f = function(gamertag) {
       HaloDotAPI(
         gamertag = gamertag,
         endpoint = 'appearance',
         version = version,
-        token = token
+        token = token,
+        class = 'appearance'
       )
     },
     .options = furrr::furrr_options(seed = NULL),
     .progress = .progress
   )
+  if (length(gamertag) == 1) return(resps[[1]])
+  make_collection(resps)
 }

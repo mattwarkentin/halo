@@ -22,7 +22,9 @@ halo_appearance(
 \code{furrr::future_map()}.}
 }
 \value{
-A \code{list} with class \code{appearance}.
+For a single gamertag, a \code{list} with class \code{appearance}. For
+multiple gamertags, a \code{list} with class \code{collection} where each item in
+the \code{list} is a \code{list} with class \code{appearance}.
 }
 \description{
 Returns targeted player's appearance on Halo Infinite.
