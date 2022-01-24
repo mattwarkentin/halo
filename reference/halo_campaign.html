@@ -54,25 +54,30 @@
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">halo_campaign</span><span class="op">(</span>
   <span class="va">gamertag</span>,
   version <span class="op">=</span> <span class="fu"><a href="get_HaloDotAPI_version.html">get_HaloDotAPI_version</a></span><span class="op">(</span><span class="op">)</span>,
-  token <span class="op">=</span> <span class="fu"><a href="get_HaloDotAPI_token.html">get_HaloDotAPI_token</a></span><span class="op">(</span><span class="op">)</span>
+  token <span class="op">=</span> <span class="fu"><a href="get_HaloDotAPI_token.html">get_HaloDotAPI_token</a></span><span class="op">(</span><span class="op">)</span>,
+  .progress <span class="op">=</span> <span class="cn">TRUE</span>
 <span class="op">)</span>
 
 <span class="fu">halo_multiplayer</span><span class="op">(</span>
   <span class="va">gamertag</span>,
   filter <span class="op">=</span> <span class="cn">NULL</span>,
   version <span class="op">=</span> <span class="fu"><a href="get_HaloDotAPI_version.html">get_HaloDotAPI_version</a></span><span class="op">(</span><span class="op">)</span>,
-  token <span class="op">=</span> <span class="fu"><a href="get_HaloDotAPI_token.html">get_HaloDotAPI_token</a></span><span class="op">(</span><span class="op">)</span>
+  token <span class="op">=</span> <span class="fu"><a href="get_HaloDotAPI_token.html">get_HaloDotAPI_token</a></span><span class="op">(</span><span class="op">)</span>,
+  .progress <span class="op">=</span> <span class="cn">TRUE</span>
 <span class="op">)</span></code></pre></div>
     </div>
 
     <div class="section level2">
     <h2 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
     <dl><dt>gamertag</dt>
-<dd><p>Player's Gamertag.</p></dd>
+<dd><p>Character vector of gamertags.</p></dd>
 <dt>version</dt>
 <dd><p>HaloDotAPI Version.</p></dd>
 <dt>token</dt>
 <dd><p>HaloDotAPI Token.</p></dd>
+<dt>.progress</dt>
+<dd><p>Logical. Should a progress bar be displayed? Passed on to
+<code><a href="https://rdrr.io/pkg/furrr/man/future_map.html" class="external-link">furrr::future_map()</a></code>.</p></dd>
 <dt>filter</dt>
 <dd><p>Filter. One of <code>'matchmade:pvp'</code>, <code>'matchmade:social'</code>,
 <code>'matchmade:ranked'</code>, <code>'matchmade:bots'</code>, or <code>'custom'</code>.</p></dd>

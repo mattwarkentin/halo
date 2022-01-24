@@ -54,18 +54,22 @@
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">halo_matches_retrieve</span><span class="op">(</span>
   <span class="va">id</span>,
   version <span class="op">=</span> <span class="fu"><a href="get_HaloDotAPI_version.html">get_HaloDotAPI_version</a></span><span class="op">(</span><span class="op">)</span>,
-  token <span class="op">=</span> <span class="fu"><a href="get_HaloDotAPI_token.html">get_HaloDotAPI_token</a></span><span class="op">(</span><span class="op">)</span>
+  token <span class="op">=</span> <span class="fu"><a href="get_HaloDotAPI_token.html">get_HaloDotAPI_token</a></span><span class="op">(</span><span class="op">)</span>,
+  .progress <span class="op">=</span> <span class="cn">TRUE</span>
 <span class="op">)</span></code></pre></div>
     </div>
 
     <div class="section level2">
     <h2 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
     <dl><dt>id</dt>
-<dd><p>Match ID.</p></dd>
+<dd><p>Character vector of match IDs.</p></dd>
 <dt>version</dt>
 <dd><p>HaloDotAPI Version.</p></dd>
 <dt>token</dt>
 <dd><p>HaloDotAPI Token.</p></dd>
+<dt>.progress</dt>
+<dd><p>Logical. Should a progress bar be displayed? Passed on to
+<code><a href="https://rdrr.io/pkg/furrr/man/future_map.html" class="external-link">furrr::future_map()</a></code>.</p></dd>
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
